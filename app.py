@@ -153,7 +153,17 @@ if model_data:
             )
             input_data['Address_U'] = opt
 
-        # 8. GROUP SKALA 1-5 (Health, Family, dll)
+        # 8. Banyak absen (input angka)
+        if 'Number_of_Absences' in features:
+            val = st.number_input(
+                "Berapa kali siswa absen?",
+                min_value=0,
+                value=0,
+                help="Seberapa sering siswa absen"
+            )
+            input_data['Number_of_Absences'] = val
+
+        # 9. GROUP SKALA 1-5 (Health, Family, dll)
         # Kita cek satu-satu fitur skala yang mungkin muncul
         scale_features_map = {
             'Family_Relationship': 'Kualitas Hubungan Keluarga',
